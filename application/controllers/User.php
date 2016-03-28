@@ -7,6 +7,10 @@ class User extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
+
+	public function storeView() {
+		$this->load->view('storeView');
+	}
 }
 
 

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>A SHOP FOR JERKS!</title>
+    <title>A SHOP FOR JERKS</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -31,7 +31,7 @@
         </ol>
         <div class="carousel-content">
             <h1>Instruments for jerks</h1>
-            <button class='btn btn-primary btn-large'>Shop Now</button>
+            <form action='/User/storeView' method='post'><button class='btn btn-primary btn-large'>Shop Now</button></form>
         </div>
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
