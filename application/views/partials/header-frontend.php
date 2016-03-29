@@ -55,7 +55,7 @@
 <?php
         if (count($this->session->user_session)){
           echo "<li><a href='#'>Welcome, " . $this->session->user_session['first_name'] . "</a></li>";
-          echo "<li><form action='/User/signOut' method='post'><button type='submit' class='btn btn-default navbar-btn'>Sign Out</button></form></li>";
+          echo "<li><form action='/Users/signOut' method='post'><button type='submit' class='btn btn-default navbar-btn'>Sign Out</button></form></li>";
         } else {
           echo "<li><button type='button' class='btn btn-default navbar-btn' data-toggle='modal' data-target='#login' >Sign in</button></li>";
         }
@@ -85,24 +85,54 @@
           <div class="row">
       <div class="box">
         <h2>Register</h2>
-        <form action='/User/register' method='post'><br>
+        <form action='/Users/register' method='post'><br>
           <input type='hidden' name='action' value='register'>
-          <label>First name: </label><input type='text' name='first_name'><br>
-          <label>Last name: </label><input type='text' name='last_name'><br>
-          <label>Email address: </label><input type='text' name=email><br>
-          <label>Password: </label><input type='password' name='password'><br>
-          <label>Confirm password: </label><input type='password' name='confirm_password'><br>
-          <input class='btn' type='submit' value='register'>
+          <table>
+
+            <tr>
+            <td><label>First name: </label>
+            </td><td><input type='text' name='first_name'><br></td>
+            </tr>
+            <tr>
+              <td><label>Last name: </label></td>
+              <td><input type='text' name='last_name'><br></td>
+            </tr>
+            <tr>
+              <td><label>Email address: </label></td>
+              <td><input type='text' name=email><br></td>
+            </tr>
+            <tr>
+              <td><label>Password: </label></td>
+              <td><input type='password' name='password'><br></td>
+            </tr>
+            <tr>
+              <td><label>Confirm password: </label></td>
+              <td><input type='password' name='confirm_password'><br></td>
+            </tr>
+            <tr>
+              <td><input class='btn' type='submit' value='register'></td>
+            </tr>
+          </table>
         </form>
       </div>
       <div class="box">
         <h2>Login</h2>
-        <form action='/User/login' method='post'>
+        <form action='/Users/login' method='post'>
           <input type='hidden' name='action' value='login'>
-          <label>Email address: </label><input type='text' name=email><br>
-          <label>Password: </label><input type='password' name='password'><br>
-          <input class='btn' type='submit' value='login'>
+          <table>
+          <tr>
+            <td><label>Email address: </label></td>
+            <td><input type='text' name=email><br></td>
+          </tr>
+          <tr>
+            <td><label>Password: </label></td>
+            <td><input type='password' name='password'><br></td>
+          </tr>
+          <tr>
+            <td><input class='btn' type='submit' value='login'></td>
+          </tr>
         </form>
+        </table>
 <?php 
       if($this->session->flashdata("registration_errors"))
       {

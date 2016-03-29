@@ -32,7 +32,7 @@
         <div class="carousel-content">
             <h1>Obscura</h1>
             <h2>Instruments for jerks</h2>
-            <form action='/User/storeView' method='post'><button class='btn btn-primary btn-large'>Shop Now</button></form>
+            <form action='/Users/storeView' method='post'><button class='btn btn-primary btn-large'>Shop Now</button></form>
         </div>
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">

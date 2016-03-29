@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class Users extends CI_Controller {
 
 	public function index()
 	{
@@ -25,9 +25,9 @@ class User extends CI_Controller {
 
 		else 
 		{
-			$this->load->model("Users");
+			$this->load->model("User");
 			$user_input = $this->input->post();			
-			$insert_user = $this->Users->insert_user($user_input);
+			$insert_user = $this->User->insert_user($user_input);
 			
 			if($insert_user)
 			{				
@@ -55,18 +55,18 @@ class User extends CI_Controller {
 		}
 		else
 		{
-			$this->load->model("Users");							   
-			$get_user = $this->Users->get_user($this->input->post());
+			$this->load->model("User");							   
+			$get_user = $this->User->get_user($this->input->post());
 
 			if ($get_user)
 			{
 				$this->session->set_userdata("user_session", $get_user);
-				redirect(base_url("/User/storeView"));
+				redirect(base_url("/Users/storeView"));
 			}
 			else
 			{
 				$this->session->set_flashdata("login_errors", "Invalid email and/or password");
-				redirect(base_url('/User/storeView'));
+				redirect(base_url('/Users/storeView'));
 			}
 		}
 	}
@@ -76,7 +76,7 @@ class User extends CI_Controller {
 		
 		$this->session->sess_destroy();
 		
-		redirect(base_url("/User/storeView"));
+		redirect(base_url("/Users/storeView"));
 
 	}
 
