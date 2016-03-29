@@ -8,8 +8,11 @@ class Products extends CI_Controller {
 		$this->load->view('index');
 	}
 
-
-
+	public function loadProduct()
+	{
+		$this->load-view('productView', $productID);
+	}
+}
 
 
 
