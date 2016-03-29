@@ -51,7 +51,7 @@ class User extends CI_Controller {
 		if($this->form_validation->run() === FALSE)
 		{
 			$this->session->set_flashdata("login_errors", validation_errors());
-			redirect(base_url('storeView'));
+			redirect(base_url('/User/storeView'));
 		}
 		else
 		{
@@ -61,18 +61,22 @@ class User extends CI_Controller {
 			if ($get_user)
 			{
 				$this->session->set_userdata("user_session", $get_user);
-				redirect(base_url("storeView"));
+				redirect(base_url("/User/storeView"));
 			}
 			else
 			{
 				$this->session->set_flashdata("login_errors", "Invalid email and/or password");
-				redirect(base_url('storeView'));
+				redirect(base_url('/User/storeView'));
 			}
 		}
 	}
 
 
+	public function signOut() {
+		session_destroy();
+		redirect(base_url("/User/storeView"));
 
+	}
 
 	public function storeView() {
 		$this->load->view('storeView');

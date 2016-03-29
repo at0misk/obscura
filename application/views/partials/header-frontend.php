@@ -13,7 +13,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 ​
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="/assets/styles/style.css">
+
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -51,13 +52,23 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Welcome, Michael</a></li>
+<?php
+        if (count($this->session->user_session)){
+          echo "<li><a href='#'>Welcome, " . $this->session->user_session['first_name'] . "</a></li>";
+          echo "<li><form action='/User/signOut' method='post'><button type='button' class='btn btn-default navbar-btn'>Sign Out</button></form></li>";
+        } else {
+          echo "<li><button type='button' class='btn btn-default navbar-btn' data-toggle='modal' data-target='#login' >Sign in</button></li>";
+        }
+
+?>
+        <!-- <li><a href="#">Welcome, Michael</a></li> -->
         <!-- <li><a href="#">Log Out</a></li> -->
-        <li><button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login">Sign in</button></li>
+       <!--  <li><button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login">Sign in</button></li> -->
         <!-- <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login"> -->
-​
+​         
       </ul>
     </div>
+
   </div>
 </nav>
 
@@ -93,6 +104,17 @@
           <label>Password: </label><input type='password' name='password'><br>
           <input class='btn' type='submit' value='login'>
         </form>
+        <?php 
+      if($this->session->flashdata("registration_errors"))
+      {
+        echo $this->session->flashdata("registration_errors");
+      }
+      if($this->session->flashdata("login_errors"))
+      {
+        echo $this->session->flashdata("login_errors");
+      }
+
+      ?>
       </div>
     </div>
         </div>
