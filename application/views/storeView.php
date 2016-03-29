@@ -6,13 +6,20 @@
 
     <!-- Custom CSS -->
     <link href="/assets/styles/full-slider.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/style.css">
 </head>
 <body>
+<?php $this->load->view('partials/header-frontend'); ?>
+
 	<div class="container">
-		<div class="menu">
+		<div class="row">
+           <div class="col-md-3 no-float">
 			<form class='search'>
 				<input type='text' name='search'>
-				<input type='button' name='search' value='search'>
+				<!-- <input type='button' name='search' value='search'> -->
+                <button type="button" class="btn btn-xs btn-danger">
+                <span class="glyphicon glyphicon-search"></span>
+                </button>
 			</form>
 			<ul>
 				<li>cat1 (20)</li>
@@ -23,7 +30,7 @@
 			</ul>
 		</div>
 	
-        <div class="row">
+        
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">

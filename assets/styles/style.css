@@ -1,0 +1,37 @@
+{
+    height:100%;
+}
+.container
+{
+    display:table;
+    width: 100%;
+    padding: 50px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+header
+{
+    background: green;
+    height: 50px;
+}
+
+.row
+{
+    height: 100%;
+    display: table-row;
+}
+.col-md-3.no-float, .col-md-9.no-float {
+    float: none; /* thanks baxabbit */
+    vertical-align: top;
+}
+.col-md-3
+{
+    display: table-cell;
+    width: 16%;
+}
+.col-md-9
+{
+    display: table-cell;
+    background: yellow;
+    width: 75%;
+}
