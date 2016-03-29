@@ -15,7 +15,7 @@
 		<div class="row">
            <div class="col-md-3 no-float">
 			<form class='search'>
-				<input type='text' name='search'>
+				<input type='text' name='search' class='search'>
 				<!-- <input type='button' name='search' value='search'> -->
                 <button type="button" class="btn btn-xs btn-danger">
                 <span class="glyphicon glyphicon-search"></span>

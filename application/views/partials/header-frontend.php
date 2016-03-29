@@ -52,12 +52,53 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Welcome, Michael</a></li>
-        <li><a href="#">Log Out</a></li>
-        <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>
+        <!-- <li><a href="#">Log Out</a></li> -->
+        <li><button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login">Sign in</button></li>
+        <!-- <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#login"> -->
 ​
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- Modal -->
+  <div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login to Obscura</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+      <div class="box">
+        <h2>Register</h2>
+        <form action='/User/register' method='post'><br>
+          <input type='hidden' name='action' value='register'>
+          <label>First name: </label><input type='text' name='first_name'><br>
+          <label>Last name: </label><input type='text' name='last_name'><br>
+          <label>Email address: </label><input type='text' name=email><br>
+          <label>Password: </label><input type='password' name='password'><br>
+          <label>Confirm password: </label><input type='password' name='confirm_password'><br>
+          <input class='btn' type='submit' value='register'>
+        </form>
+      </div>
+      <div class="box">
+        <h2>Login</h2>
+        <form action='/User/login' method='post'>
+          <input type='hidden' name='action' value='login'>
+          <label>Email address: </label><input type='text' name=email><br>
+          <label>Password: </label><input type='password' name='password'><br>
+          <input class='btn' type='submit' value='login'>
+        </form>
+      </div>
+    </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </body>
 </html>

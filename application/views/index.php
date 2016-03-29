@@ -20,7 +20,7 @@
 </head>
 
 <body>
-
+    
     <!-- Full Page Image Background Carousel Header -->
     <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
@@ -30,7 +30,8 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <div class="carousel-content">
-            <h1>Instruments for jerks</h1>
+            <h1>Obscura</h1>
+            <h2>Instruments for jerks</h2>
             <form action='/User/storeView' method='post'><button class='btn btn-primary btn-large'>Shop Now</button></form>
         </div>
         <!-- Wrapper for Slides -->
