@@ -73,7 +73,9 @@ class User extends CI_Controller {
 
 
 	public function signOut() {
-		session_destroy();
+		
+		$this->session->sess_destroy();
+		
 		redirect(base_url("/User/storeView"));
 
 	}

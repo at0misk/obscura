@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Funky Instrument Jungle</title>
+  <title>Funky Instrument Jungle</title>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Latest compiled and minified CSS -->
@@ -55,11 +55,10 @@
 <?php
         if (count($this->session->user_session)){
           echo "<li><a href='#'>Welcome, " . $this->session->user_session['first_name'] . "</a></li>";
-          echo "<li><form action='/User/signOut' method='post'><button type='button' class='btn btn-default navbar-btn'>Sign Out</button></form></li>";
+          echo "<li><form action='/User/signOut' method='post'><button type='submit' class='btn btn-default navbar-btn'>Sign Out</button></form></li>";
         } else {
           echo "<li><button type='button' class='btn btn-default navbar-btn' data-toggle='modal' data-target='#login' >Sign in</button></li>";
         }
-
 ?>
         <!-- <li><a href="#">Welcome, Michael</a></li> -->
         <!-- <li><a href="#">Log Out</a></li> -->
@@ -104,7 +103,7 @@
           <label>Password: </label><input type='password' name='password'><br>
           <input class='btn' type='submit' value='login'>
         </form>
-        <?php 
+<?php 
       if($this->session->flashdata("registration_errors"))
       {
         echo $this->session->flashdata("registration_errors");
@@ -113,8 +112,7 @@
       {
         echo $this->session->flashdata("login_errors");
       }
-
-      ?>
+?>
       </div>
     </div>
         </div>
