@@ -32,7 +32,7 @@ class Users extends CI_Controller {
 			if($insert_user)
 			{				
 				$this->session->set_userdata("user_session", $user_input);
-				redirect(base_url("storeView"));
+				redirect(base_url("/Users/storeView"));
 			}
 			else
 			{
